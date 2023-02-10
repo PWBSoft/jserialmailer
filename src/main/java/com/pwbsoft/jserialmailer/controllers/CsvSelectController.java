@@ -36,7 +36,7 @@ public class CsvSelectController extends BaseController {
         var message = App.getMessage();
         csvFileLabel.setText(message.getCsvFileName());
         csvFileButton.setOnMouseClicked(this::selectFile);
-        nextButton.setOnMouseClicked(e-> App.getHomeController().setSubScene(Views.HTML_IMPORT));
+        nextButton.setOnMouseClicked(e -> App.getHomeController().setSubScene(Views.HTML_IMPORT));
     }
 
     private void selectFile(Event event) {

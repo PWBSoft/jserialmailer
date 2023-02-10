@@ -25,12 +25,6 @@ public class SMTPService {
     Properties properties;
     Session session;
 
-    public static class SMTPException extends Exception {
-        public SMTPException(String message, Throwable cause) {
-            super(message, cause);
-        }
-    }
-
     private void configure() {
         properties = new Properties();
         properties.put("mail.smtp.auth", true);
@@ -96,6 +90,12 @@ public class SMTPService {
             System.out.println("Error while sending email: ");
             e.printStackTrace();
             throw e;
+        }
+    }
+
+    public static class SMTPException extends Exception {
+        public SMTPException(String message, Throwable cause) {
+            super(message, cause);
         }
     }
 }

@@ -3,6 +3,7 @@ package com.pwbsoft.jserialmailer;
 import com.pwbsoft.jserialmailer.controllers.AboutController;
 import com.pwbsoft.jserialmailer.controllers.BaseController;
 import com.pwbsoft.jserialmailer.controllers.HomeController;
+import com.pwbsoft.jserialmailer.controllers.LicenseController;
 import com.pwbsoft.jserialmailer.data.Recipient;
 import com.pwbsoft.jserialmailer.data.SettingsDTO;
 import javafx.application.Application;
@@ -23,6 +24,8 @@ import java.util.Objects;
  */
 public class App extends Application {
 
+    @Getter
+    private static final HomeController homeController = new HomeController();
     private static Scene scene;
     @Getter
     private static App mainApp;
@@ -30,22 +33,9 @@ public class App extends Application {
     private static Stage rootStage;
     @Getter
     private static SettingsDTO message = new SettingsDTO();
-    @Getter
-    private static final HomeController homeController = new HomeController();
 
     static void setStageIcon(Stage stage) {
         stage.getIcons().add(new Image(Objects.requireNonNull(App.class.getClassLoader().getResourceAsStream("icon.png"))));
-    }
-
-    @Override
-    public void start(Stage stage) throws IOException {
-        mainApp = this;
-        rootStage = stage;
-        scene = new Scene(loadFXML(Views.HOME), 640, 480);
-        stage.setScene(scene);
-        stage.setTitle("JSerialMailer");
-        setStageIcon(stage);
-        stage.show();
     }
 
     static void setView(Views view) throws IOException {
@@ -60,17 +50,32 @@ public class App extends Application {
     @SneakyThrows
     public static void openAbout() {
         var aboutCtrl = new AboutController();
-        Stage stage = new Stage();
-        aboutCtrl.setStage(stage);
         var parent = loadFXML(Views.ABOUT, aboutCtrl);
-        stage.setTitle("About");
+
+        var scene = new Scene(parent);
+        var stage = popup("About", scene);
+        aboutCtrl.setStage(stage);
+    }
+
+    @SneakyThrows
+    public static void openLicense() {
+        var ctrl = new LicenseController();
+        var parent = loadFXML(Views.LICENSE, ctrl);
+        var scene = new Scene(parent);
+        var stage = popup("License", scene);
+        ctrl.setStage(stage);
+    }
+
+    private static Stage popup(String title, Scene scene) {
+        Stage stage = new Stage();
+        stage.setTitle(title);
         setStageIcon(stage);
         stage.setResizable(false);
         stage.setAlwaysOnTop(true);
-
-        var scene = new Scene(parent);
         stage.setScene(scene);
-        stage.showAndWait();
+        stage.show();
+
+        return stage;
     }
 
     @SneakyThrows
@@ -82,6 +87,21 @@ public class App extends Application {
         else
             fxmlLoader.setController(controller);
         return fxmlLoader.load();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        mainApp = this;
+        rootStage = stage;
+        scene = new Scene(loadFXML(Views.HOME), 640, 480);
+        stage.setScene(scene);
+        stage.setTitle("JSerialMailer");
+        setStageIcon(stage);
+        stage.show();
     }
 
     public void startAnew() {
@@ -104,10 +124,6 @@ public class App extends Application {
 
     public void clearRecipients() {
         message.getMessageDTO().getRecipients().clear();
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 
 }

@@ -20,7 +20,10 @@ public class HomeController extends BaseController {
     MenuItem menuNew;
     @FXML
     MenuItem menuClose;
-    @FXML MenuItem menuAbout;
+    @FXML
+    MenuItem menuAbout;
+    @FXML
+    MenuItem menuLicense;
 
     BaseController subSceneController;
 
@@ -35,8 +38,9 @@ public class HomeController extends BaseController {
         if (initialSetup) {
             initialSetup = false;
             menuAbout.setOnAction(e -> App.openAbout());
-            menuNew.setOnAction(e-> App.getMainApp().startAnew());
-            menuClose.setOnAction(e-> System.exit(0));
+            menuLicense.setOnAction(e -> App.openLicense());
+            menuNew.setOnAction(e -> App.getMainApp().startAnew());
+            menuClose.setOnAction(e -> System.exit(0));
         }
     }
 

@@ -1,5 +1,6 @@
 package com.pwbsoft.jserialmailer.controllers;
 
+import com.pwbsoft.jserialmailer.App;
 import com.pwbsoft.jserialmailer.SystemInfo;
 import com.pwbsoft.jserialmailer.data.AboutDTO;
 import com.pwbsoft.jserialmailer.utils.UrlUtils;
@@ -18,6 +19,9 @@ public class AboutController extends BaseController {
     @FXML
     TableView<AboutDTO> table;
 
+    @FXML
+    Button licenseBtn;
+
     @Setter
     Stage stage;
 
@@ -26,8 +30,10 @@ public class AboutController extends BaseController {
     void initialize() {
         closeBtn.setOnMouseClicked(e -> stage.close());
         goToWebsite.setOnMouseClicked(e -> UrlUtils.openUrl(SystemInfo.getProperties().getProperty("provider.url")));
+        licenseBtn.setOnMouseClicked(e -> App.openLicense());
 
         table.getItems().add(new AboutDTO("Application Version", SystemInfo.appVersion()));
+        table.getItems().add(new AboutDTO("Application License", SystemInfo.getProperties().getProperty("app.license")));
         table.getItems().add(new AboutDTO("Java Version", SystemInfo.javaVersion()));
         table.getItems().add(new AboutDTO("JavaFX Version", SystemInfo.javafxVersion()));
         table.getItems().add(new AboutDTO("Recognised OS", SystemInfo.getOS().name()));

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19">
+    <children>
+        <Label layoutX="226.0" layoutY="14.0" text="JSerialMailer" AnchorPane.bottomAnchor="255.0"
+               AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="227.0" AnchorPane.topAnchor="10.0">
+            <font>
+                <Font name="System Bold Italic" size="24.0"/>
+            </font>
+        </Label>
+        <Button fx:id="closeBtn" layoutX="534.0" layoutY="261.0" mnemonicParsing="false" text="Close"
+                AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0"/>
+        <Label layoutX="458.0" layoutY="19.0" text="by Sofia Vicedomini"/>
+        <Hyperlink fx:id="goToWebsite" layoutX="563.0" layoutY="16.0" text="&gt;"/>
+        <ScrollPane layoutX="14.0" layoutY="50.0" prefHeight="200.0" prefWidth="575.0" AnchorPane.bottomAnchor="50.0"
+                    AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0">
+            <content>
+                <TextFlow fx:id="licenseText" prefHeight="200.0" prefWidth="555.0" textAlignment="CENTER"/>
+            </content>
+        </ScrollPane>
+        <Hyperlink fx:id="learnMore" layoutX="15.0" layoutY="261.0" text="Hyperlink"/>
+    </children>
+</AnchorPane>

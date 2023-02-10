@@ -13,6 +13,7 @@ public class TemplateService {
         var tmpl = hb.compile(templateUrl);
         return tmpl.apply(variables);
     }
+
     @SneakyThrows
     public static String parse(String template, Map<String, String> variables) {
         var hb = new Handlebars();

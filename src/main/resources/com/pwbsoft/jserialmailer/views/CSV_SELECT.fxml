@@ -3,7 +3,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<AnchorPane prefWidth="500" prefHeight="500" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefWidth="500" prefHeight="500" xmlns="http://javafx.com/javafx/19">
     <children>
         <TextField fx:id="csvFileLabel" editable="false" layoutX="14.0" layoutY="36.0" prefHeight="25.0"
                    prefWidth="356.0" promptText="Select CSV File" AnchorPane.leftAnchor="14.0"

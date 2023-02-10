@@ -10,13 +10,6 @@ public class UrlUtils {
     private static final String[] linux_browsers = {"google-chrome", "firefox", "mozilla", "epiphany", "konqueror",
             "netscape", "opera", "links", "lynx"};
 
-    public static class FileNameComparator implements Comparator<Path> {
-        public int compare(Path a, Path b) {
-            return a.toAbsolutePath().compareTo( b.toAbsolutePath() );
-        }
-    }
-
-
     public static void openUrl(String url) {
         SystemInfo.OS os = SystemInfo.getOS();
         Runtime rt = Runtime.getRuntime();
@@ -48,6 +41,12 @@ public class UrlUtils {
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public static class FileNameComparator implements Comparator<Path> {
+        public int compare(Path a, Path b) {
+            return a.toAbsolutePath().compareTo(b.toAbsolutePath());
         }
     }
 }

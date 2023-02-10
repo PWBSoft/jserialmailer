@@ -1,8 +1,9 @@
 package com.pwbsoft.jserialmailer;
 
-import jakarta.mail.Session;
+import lombok.SneakyThrows;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Properties;
 
@@ -11,6 +12,18 @@ public class SystemInfo {
     public static final String NEW_LINE = "\n";
     public static Properties properties = new Properties();
     public static List<OS> WINOS = List.of(OS.OLDWIN, OS.WIN7, OS.WIN8, OS.WIN10);
+
+    private static String license;
+
+    @SneakyThrows
+    public static String getLicence() {
+        if (license == null) {
+            var i = SystemInfo.class.getClassLoader().getResourceAsStream("license.txt");
+            assert i != null;
+            license = new String(i.readAllBytes(), StandardCharsets.UTF_8);
+        }
+        return license;
+    }
 
     private static void initProperties() {
         try {

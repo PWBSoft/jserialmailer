@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ceee0291-5e99-4fe4-ac9a-7757ad22ad14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/packr.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/controllers/LicenseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/pwbsoft/jserialmailer/views/LICENSE.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/license.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/controllers/HtmlImportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/controllers/HtmlImportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/controllers/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/controllers/ReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/SystemInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/SystemInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/Views.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/controllers/AboutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/controllers/AboutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwbsoft/jserialmailer/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/pwbsoft/jserialmailer/views/ABOUT.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/pwbsoft/jserialmailer/views/ABOUT.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/pwbsoft/jserialmailer/views/HOME.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/pwbsoft/jserialmailer/views/HOME.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +58,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Development/jserialmailer",
+    "last_opened_file_path": "C:/Development/jserialmailer/src/main/resources/com/pwbsoft/jserialmailer/views",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,10 +74,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Development\jserialmailer\src\main\resources\com\pwbsoft\jserialmailer\views" />
       <recent name="C:\Development\jserialmailer" />
       <recent name="C:\Development\jserialmailer\src\main\resources" />
       <recent name="C:\Development\jserialmailer\src\main\java\com\pwbsoft\jserialmailer" />
-      <recent name="C:\Development\jserialmailer\src\main\resources\com\pwbsoft\jserialmailer\views" />
       <recent name="C:\Development\jserialmailer\src\main\resources\com\pwbsoft\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -79,10 +86,11 @@
       <recent name="C:\Development\jserialmailer\src\main\resources\com\pwbsoft\jserialmailer" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.pwbsoft.jserialmailer.controllers" />
       <recent name="com.pwbsoft.jserialmailer" />
     </key>
   </component>
-  <component name="RunManager" selected="Batch.build-win-local">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pwbsoft.jserialmailer.App" />
       <module name="jserialmailer" />
@@ -109,8 +117,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Batch.build-win-local" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Batch.build-win-local" />
       </list>
     </recent_temporary>
   </component>
@@ -123,7 +131,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675947537562</updated>
       <workItem from="1675947538925" duration="14063000" />
-      <workItem from="1676019167474" duration="19942000" />
+      <workItem from="1676019167474" duration="21598000" />
     </task>
     <servers />
   </component>
