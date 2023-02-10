@@ -2,6 +2,7 @@ package com.pwbsoft.jserialmailer.controllers;
 
 import com.pwbsoft.jserialmailer.App;
 import com.pwbsoft.jserialmailer.Views;
+import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -33,8 +34,10 @@ public class HtmlImportController extends BaseController {
 
     private void reset() {
         var s = App.getMessage().getTemplateFileName();
-        htmlFileLabel.setText(s);
-        loadHtml(s);
+        if (s != null) {
+            htmlFileLabel.setText(s);
+            Platform.runLater(() -> loadHtml(s));
+        }
     }
 
     @SneakyThrows

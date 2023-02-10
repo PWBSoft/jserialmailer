@@ -11,6 +11,7 @@
         <javafx.version>19</javafx.version>
         <handlebars-version>4.3.1</handlebars-version>
         <angusmail-version>2.0.1</angusmail-version>
+        <main.class>com.pwbsoft.jserialmailer.App</main.class>
     </properties>
     <dependencies>
         <dependency>
@@ -51,6 +52,12 @@
 
     </dependencies>
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -58,6 +65,13 @@
                 <version>3.8.0</version>
                 <configuration>
                     <release>11</release>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.24</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <plugin>
@@ -70,7 +84,29 @@
                         <!-- Usage: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.pwbsoft.jserialmailer.App</mainClass>
+                            <mainClass>${main.class}</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>${main.class}</mainClass>
+                                </transformer>
+                            </transformers>
+                            <outputFile>target/jserialmailer.jar</outputFile>
                         </configuration>
                     </execution>
                 </executions>

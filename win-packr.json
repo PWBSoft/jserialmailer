@@ -1,0 +1,17 @@
+{
+  "platform": "windows64",
+  "jdk": "https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.18%2B10/OpenJDK11U-jdk_x64_windows_hotspot_11.0.18_10.zip",
+  "executable": "JSerialMailer",
+  "classpath": [
+    "target/jserialmailer.jar"
+  ],
+  "mainclass": "com.pwbsoft.jserialmailer.App",
+  "vmargs": [
+    "Xmx1G"
+  ],
+  "resources": [
+    "src/main/resources"
+  ],
+  "minimizejre": "soft",
+  "output": "out-win"
+}
