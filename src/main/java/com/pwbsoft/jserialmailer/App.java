@@ -1,5 +1,6 @@
 package com.pwbsoft.jserialmailer;
 
+import com.pwbsoft.jserialmailer.controllers.AboutController;
 import com.pwbsoft.jserialmailer.controllers.BaseController;
 import com.pwbsoft.jserialmailer.controllers.HomeController;
 import com.pwbsoft.jserialmailer.data.Recipient;
@@ -29,6 +30,7 @@ public class App extends Application {
     private static Stage rootStage;
     @Getter
     private static SettingsDTO message = new SettingsDTO();
+    @Getter
     private static final HomeController homeController = new HomeController();
 
     static void setStageIcon(Stage stage) {
@@ -53,6 +55,22 @@ public class App extends Application {
     @SneakyThrows
     public static Parent loadFXML(Views view) throws IOException {
         return loadFXML(view, view.getControllerInstance());
+    }
+
+    @SneakyThrows
+    public static void openAbout() {
+        var aboutCtrl = new AboutController();
+        Stage stage = new Stage();
+        aboutCtrl.setStage(stage);
+        var parent = loadFXML(Views.ABOUT, aboutCtrl);
+        stage.setTitle("About");
+        setStageIcon(stage);
+        stage.setResizable(false);
+        stage.setAlwaysOnTop(true);
+
+        var scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.showAndWait();
     }
 
     @SneakyThrows

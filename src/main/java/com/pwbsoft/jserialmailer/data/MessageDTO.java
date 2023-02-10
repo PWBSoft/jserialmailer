@@ -8,5 +8,6 @@ import java.util.List;
 @Data
 public class MessageDTO {
     private String template;
+    private String subject;
     private List<Recipient> recipients = new ArrayList<>();
 }

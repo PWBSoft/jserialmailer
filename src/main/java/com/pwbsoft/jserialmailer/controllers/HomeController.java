@@ -5,8 +5,8 @@ import com.pwbsoft.jserialmailer.Views;
 import javafx.fxml.FXML;
 import javafx.scene.SubScene;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.ProgressBar;
-import lombok.Setter;
 import lombok.SneakyThrows;
 
 public class HomeController extends BaseController {
@@ -16,17 +16,32 @@ public class HomeController extends BaseController {
     ProgressBar progressBar;
     @FXML
     SubScene container;
+    @FXML
+    MenuItem menuNew;
+    @FXML
+    MenuItem menuClose;
+    @FXML MenuItem menuAbout;
 
     BaseController subSceneController;
 
-    @Override @FXML
+    boolean initialSetup = true;
+
+    @Override
+    @FXML
     public void initialize() {
         statusLabel.setText("Ready");
         setSubScene(Views.CSV_SELECT);
+
+        if (initialSetup) {
+            initialSetup = false;
+            menuAbout.setOnAction(e -> App.openAbout());
+            menuNew.setOnAction(e-> App.getMainApp().startAnew());
+            menuClose.setOnAction(e-> System.exit(0));
+        }
     }
 
     @SneakyThrows
-    private void setSubScene(Views view) {
+    public void setSubScene(Views view) {
         subSceneController = view.getControllerInstance();
         var fxml = App.loadFXML(view, subSceneController);
         container.setRoot(fxml);

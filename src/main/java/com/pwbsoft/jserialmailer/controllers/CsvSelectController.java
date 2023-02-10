@@ -1,6 +1,7 @@
 package com.pwbsoft.jserialmailer.controllers;
 
 import com.pwbsoft.jserialmailer.App;
+import com.pwbsoft.jserialmailer.Views;
 import com.pwbsoft.jserialmailer.data.Recipient;
 import com.pwbsoft.jserialmailer.service.CSVService;
 import javafx.beans.property.SimpleStringProperty;
@@ -35,12 +36,13 @@ public class CsvSelectController extends BaseController {
         var message = App.getMessage();
         csvFileLabel.setText(message.getCsvFileName());
         csvFileButton.setOnMouseClicked(this::selectFile);
+        nextButton.setOnMouseClicked(e-> App.getHomeController().setSubScene(Views.HTML_IMPORT));
     }
 
     private void selectFile(Event event) {
         var chooser = new FileChooser();
         var filter = new FileChooser.ExtensionFilter("CSV Files", "*.csv");
-        chooser.setSelectedExtensionFilter(filter);
+        chooser.getExtensionFilters().add(filter);
         var file = chooser.showOpenDialog(App.getRootStage());
         if (file != null) {
 

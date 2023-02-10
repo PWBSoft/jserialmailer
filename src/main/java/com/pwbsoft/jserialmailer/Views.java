@@ -1,8 +1,6 @@
 package com.pwbsoft.jserialmailer;
 
-import com.pwbsoft.jserialmailer.controllers.BaseController;
-import com.pwbsoft.jserialmailer.controllers.CsvSelectController;
-import com.pwbsoft.jserialmailer.controllers.HomeController;
+import com.pwbsoft.jserialmailer.controllers.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.SneakyThrows;
@@ -14,10 +12,10 @@ import java.util.Arrays;
 public enum Views {
     HOME ("views/HOME.fxml", HomeController.class),
     CSV_SELECT ("views/CSV_SELECT.fxml", CsvSelectController.class),
-    HTML_IMPORT ("views/HTML_IMPORT.fxml", CsvSelectController.class),
-    REVIEW ("views/REVIEW.fxml", CsvSelectController.class),
-    PROCESS ("views/PROCESS.fxml", CsvSelectController.class),
-    END ("views/END.fxml", CsvSelectController.class),
+    HTML_IMPORT ("views/HTML_IMPORT.fxml", HtmlImportController.class),
+    REVIEW ("views/REVIEW.fxml", ReviewController.class),
+    PROCESS ("views/PROCESS.fxml", ProcessController.class),
+    END ("views/END.fxml", EndController.class),
     ABOUT("views/ABOUT.fxml", CsvSelectController.class),
     ;
     private final String path;
