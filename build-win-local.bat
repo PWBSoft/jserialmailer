@@ -1,8 +1,6 @@
 @echo off
-if exist out-win\ (
-  rmdir /s /q out-win
-)
-
-call mvn clean install
+call win-pre.bat
 
 java -jar packr.jar win-packr-local.json
+
+call win-post.bat

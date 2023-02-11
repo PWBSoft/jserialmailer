@@ -1,0 +1,17 @@
+{
+  "platform": "linux64",
+  "jdk": "jdk-win.zip",
+  "executable": "JSerialMailer",
+  "classpath": [
+    "target/jserialmailer.jar"
+  ],
+  "mainclass": "com.pwbsoft.jserialmailer.App",
+  "vmargs": [
+    "Xmx1G"
+  ],
+  "resources": [
+    "src/main/resources"
+  ],
+  "minimizejre": "soft",
+  "output": "out-nix"
+}

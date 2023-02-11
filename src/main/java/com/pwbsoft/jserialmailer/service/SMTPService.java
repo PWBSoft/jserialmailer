@@ -39,8 +39,6 @@ public class SMTPService {
         session = Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                System.out.printf("Logging in with %s pw %s on %s:%d - SSL? %s",
-                        username, password, server, port, ssl);
                 return new PasswordAuthentication(username, password);
             }
         });

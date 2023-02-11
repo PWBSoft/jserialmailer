@@ -2,6 +2,7 @@ package com.pwbsoft.jserialmailer.controllers;
 
 import com.pwbsoft.jserialmailer.App;
 import com.pwbsoft.jserialmailer.Views;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.SubScene;
 import javafx.scene.control.Label;
@@ -53,7 +54,9 @@ public class HomeController extends BaseController {
     }
 
     public void setStatus(String labelValue, double progress) {
-        statusLabel.setText(labelValue);
-        progressBar.setProgress(progress);
+        Platform.runLater(() -> {
+            statusLabel.setText(labelValue);
+            progressBar.setProgress(progress);
+        });
     }
 }
